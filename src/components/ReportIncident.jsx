@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import Navbar from './navbar';
 import './report.css';
 import NavbarComponent from './LoggedNavBar';
+import firebase, { database, storage } from './firebaseConfig';
 
 const ReportIncident = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -41,8 +42,56 @@ const ReportIncident = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log('Form submitted successfully');
+      
+      const incidentRef = database.ref('incidents');
+      const newIncident = {
+        category,
+        location,
+        city,
+        pincode,
+        description,
+        imageURL: '', 
+      };
+
+      incidentRef.push(newIncident)
+        .then((snapshot) => {
+          console.log('Incident reported successfully');
+          if (selectedFile) {
+            handleImageUpload(snapshot.key); 
+          } else {
+          }
+        })
+        .catch((error) => {
+          console.error('Error reporting incident:', error);
+        });
     }
+  };
+
+  const handleImageUpload = (incidentKey) => {
+    const storageRef = storage.ref();
+    const imageRef = storageRef.child(`incident_images/${incidentKey}/${selectedFile.name}`);
+
+    imageRef.put(selectedFile)
+      .then((snapshot) => {
+        console.log('Image uploaded successfully');
+        // Get download URL and update imageURL in incident data
+        snapshot.ref.getDownloadURL().then((downloadURL) => {
+          const updatedIncident = { imageURL: downloadURL };
+          database.ref(`incidents/${incidentKey}`).update(updatedIncident)
+            .then(() => {
+              console.log('Incident reported with image URL');
+             
+            })
+            .catch((error) => {
+              console.error('Error updating incident with image URL:', error);
+              
+            });
+        });
+      })
+      .catch((error) => {
+        console.error('Error uploading image:', error);
+        
+      });
   };
 
   return (

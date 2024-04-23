@@ -6,22 +6,14 @@ import Footer from "./Footer"
 const Contact = () => {
   return (
     <div className="contact-us-container">
-      <Navbar />
+      <Navbar/>
       <div className="contact-info">
         <h1 className="contacth1">Contact Us</h1>
         <div className="info">
           <div className="details">
             <h2>Website Developer</h2>
-            <p>Contact Person: Krish Mehta</p>
-            <p>Email: <a href="mailto:krish1604mehta@gmail.com" style={{ textDecoration: 'underline', color: '#085444' }}>krish1604mehta@gmail.com</a></p>
-            <p>Phone: +91 77777 77777</p>
-          </div>
-        </div>
-        <div className="info">
-          <div className="details">
-            <h2>Website Developer</h2>
-            <p>Contact Person: Vedang Garg</p>
-            <p>Email: <a href="mailto:vedanggarg@gmail.com" style={{ textDecoration: 'underline', color: '#085444' }}>vedanggarg@gmail.com</a></p>
+            <p>Contact Person: Dhairya Shah</p>
+            <p>Email: <a href="mailto:dhairya@gmail.com" style={{ textDecoration: 'underline', color: '#085444' }}>dhairya@gmail.com</a></p>
             <p>Phone: +91 77777 77777</p>
           </div>
         </div>

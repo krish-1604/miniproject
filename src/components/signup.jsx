@@ -12,6 +12,7 @@ import hide from "../assets/hide.png";
 import firebase from './firebase'; 
 
 const Signup = () => {
+  const [login1,setLogin1] = useState(false);
   const [signupSuccess, setSignupSuccess] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -65,7 +66,8 @@ const Signup = () => {
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       console.log("Account created successfully");
       setSignupSuccess(true);
-      navigate("/userhome"); 
+      navigate("/userhome");
+      setLogin1(true); 
     } catch (err) {
       console.error("Error creating account:", err.message);
       setIsError(true);
