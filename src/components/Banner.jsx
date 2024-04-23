@@ -23,7 +23,6 @@ const Banner = () => {
                   <a href="#content" className="bannerHelp">
                     Help Someone
                   </a>
-                  {/* <button type="button" className="bannerLogin">Login</button> */}
                   <Link
                     to="/login"
                     style={{
@@ -52,8 +51,7 @@ const Banner = () => {
             </Row>
           </Container>
         </div>
-        {/* <img src={footer} className="footerBanner" /> */}
-        {/* <div className="animation-background"></div> */}
+
       </div>
     </div>
   );

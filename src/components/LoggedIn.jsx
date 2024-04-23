@@ -25,11 +25,9 @@ const LoggedIn = () => {
                     Together, We Can Make a Difference
                   </p>
                   <div style={{display: "flex"}}>
-                  <button type="button" className="bannerHelp">
+                  <a href="#content" className="bannerHelp">
                     Help Someone
-                  </button>
-                  {/* <button type="button" className="bannerLogin">Login</button> */}
-                  
+                  </a>
                 </div>
                 </div>
               </Col>
@@ -39,8 +37,6 @@ const LoggedIn = () => {
             </Row>
           </Container>
         </div>
-        <img src={footer} className="footerBanner" />
-        {/* <div className="animation-background"></div> */}
       </div>
         <Content/>
         <GetHelp/>
@@ -48,4 +44,4 @@ const LoggedIn = () => {
   )
 }
 
-export default LoggedIn
+export default LoggedIn;

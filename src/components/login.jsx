@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./navbar";
-import { Link } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import "./login.css";
-import "bootstrap";
 import loginImg from "../assets/loginImg.png";
 import Footer from "./Footer";
 import google from "../assets/google.png";
@@ -11,6 +9,7 @@ import facebook from "../assets/facebook.png";
 import or from "../assets/or.png";
 import show from "../assets/show.png";
 import hide from "../assets/hide.png";
+import firebase from './firebase'; 
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -19,12 +18,14 @@ const Login = () => {
   const [errorOcured, setErrorOccured] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // State to track password visibility
   const [isVisible,setIsVisible]=useState(false);
+  const [loginError, setLoginError] = useState(""); // State to track login errors
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const validateForm = () => {
     const errors = {};
 
     if (!username.trim()) {
-      errors.username = "*Username is required";
+      errors.username = "*Email is required";
       setErrorOccured(true);
     }
     if (!password.trim()) {
@@ -35,10 +36,18 @@ const Login = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // this.props.history.push('/userhome');
+      try {
+        await firebase.auth().signInWithEmailAndPassword(username, password);
+        console.log("Login successful");
+        navigate("/userhome");
+      } catch (error) {
+        console.error("Error logging in:", error.message);
+        setLoginError("Incorrect Email or password."); 
+        setErrorOccured(true);
+      }
     }
   };
 
@@ -53,6 +62,7 @@ const Login = () => {
       <div className="mainLoginContainer">
         <div className="loginDiv">
           <h1>Login</h1>
+          {loginError && <span className="error">{loginError}</span>} {/* Display login error */}
           <p>Log In using social networks</p>
           <div className="social-icons">
             <a target="_blank" href="https://www.google.com">
@@ -75,7 +85,7 @@ const Login = () => {
           <div className="input-label">Password</div>
           <div className="password-wrapper">
             <input
-              type={showPassword ? "text" : "password"} // Toggle between text and password type
+              type={showPassword ? "text" : "password"} 
               className="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -86,7 +96,7 @@ const Login = () => {
           {errors.password && <span className="error" id="error">{errors.password}</span>}
           <button type="button" className={setErrorOccured ? "loginbuttonrevised" : "loginbutton"} onClick={handleSubmit}>
             <a href="/userhome" className="nakli2">
-            Login
+              Login
             </a>
           </button>
         </div>
