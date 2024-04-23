@@ -3,8 +3,10 @@ import Navbar from './navbar';
 import './report.css';
 import NavbarComponent from './LoggedNavBar';
 import firebase, { database, storage } from './firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 
 const ReportIncident = () => {
+  const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState(null);
   const [category, setCategory] = useState('');
   const [location, setLocation] = useState('');
@@ -56,6 +58,7 @@ const ReportIncident = () => {
       incidentRef.push(newIncident)
         .then((snapshot) => {
           console.log('Incident reported successfully');
+          navigate("/userhome");
           if (selectedFile) {
             handleImageUpload(snapshot.key); 
           } else {
@@ -74,7 +77,6 @@ const ReportIncident = () => {
     imageRef.put(selectedFile)
       .then((snapshot) => {
         console.log('Image uploaded successfully');
-        // Get download URL and update imageURL in incident data
         snapshot.ref.getDownloadURL().then((downloadURL) => {
           const updatedIncident = { imageURL: downloadURL };
           database.ref(`incidents/${incidentKey}`).update(updatedIncident)

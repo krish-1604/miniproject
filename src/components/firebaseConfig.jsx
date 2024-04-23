@@ -1,6 +1,6 @@
-import firebase from 'firebase/compat/app'; // Import Firebase from compat/app for compatibility with older versions
-import 'firebase/compat/database'; // Import Firebase Database
-import 'firebase/compat/storage'; // Import Firebase Storage
+import firebase from 'firebase/compat/app'; 
+import 'firebase/compat/database'; 
+import 'firebase/compat/storage'; 
 
 const firebaseConfig = {
   apiKey: 'YOUR_API_KEY',
@@ -12,7 +12,7 @@ const firebaseConfig = {
   appId: 'YOUR_APP_ID',
 };
 
-// Initialize Firebase if it's not already initialized
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }

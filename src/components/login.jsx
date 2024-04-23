@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./navbar";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import loginImg from "../assets/loginImg.png";
 import Footer from "./Footer";
@@ -16,10 +16,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [errorOcured, setErrorOccured] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // State to track password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const [isVisible,setIsVisible]=useState(false);
-  const [loginError, setLoginError] = useState(""); // State to track login errors
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [loginError, setLoginError] = useState(""); 
+  const navigate = useNavigate(); 
 
   const validateForm = () => {
     const errors = {};
@@ -57,12 +57,12 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="login-container">
       <Navbar />
       <div className="mainLoginContainer">
         <div className="loginDiv">
           <h1>Login</h1>
-          {loginError && <span className="error">{loginError}</span>} {/* Display login error */}
           <p>Log In using social networks</p>
           <div className="social-icons">
             <a target="_blank" href="https://www.google.com">
@@ -85,7 +85,7 @@ const Login = () => {
           <div className="input-label">Password</div>
           <div className="password-wrapper">
             <input
-              type={showPassword ? "text" : "password"} 
+              type={showPassword ? "text" : "password"} // Toggle between text and password type
               className="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -96,7 +96,7 @@ const Login = () => {
           {errors.password && <span className="error" id="error">{errors.password}</span>}
           <button type="button" className={setErrorOccured ? "loginbuttonrevised" : "loginbutton"} onClick={handleSubmit}>
             <a href="/userhome" className="nakli2">
-              Login
+            Login
             </a>
           </button>
         </div>
@@ -125,8 +125,9 @@ const Login = () => {
           </Link>
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

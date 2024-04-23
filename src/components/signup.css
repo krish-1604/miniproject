@@ -86,9 +86,10 @@ body {
 }
 
 .error{
+   color: red;
   font-size: 12px;
-  margin-bottom: 10px;
-  color: red;
+  margin-top: 5px;
+  display: flex;
 }
 
 
