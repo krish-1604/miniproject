@@ -130,7 +130,7 @@ const ReportIncident = () => {
         <div className="inputContainer">
           <label className='fieldLabel'>Pincode</label>
           <br/>
-          <input type='text' className='inputField' value={pincode} onChange={(e) => setPincode(e.target.value)}/>
+          <input type='number' className='inputField' value={pincode} onChange={(e) => setPincode(e.target.value)}/>
           {errors.pincode && <div className="error">{errors.pincode}</div>}
         </div>
         <br/>
