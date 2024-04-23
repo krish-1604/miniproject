@@ -20,7 +20,7 @@ const Footer = () => {
               <li><Link to="/home" style={{ textDecoration: 'underline', color: '#e8d5b8' }}>Home</Link></li>
               <li><Link to="/report" style={{ textDecoration: 'underline', color: '#e8d5b8' }}>Report</Link></li>
               <li><Link to="/home#getHelp" style={{ textDecoration: 'underline', color: '#e8d5b8' }}>Get Help</Link></li>
-              <li><Link to="/contact-us" style={{ textDecoration: 'underline', color: '#e8d5b8' }}>Contact Us</Link></li>
+              <li><Link to="/contact" style={{ textDecoration: 'underline', color: '#e8d5b8' }}>Contact Us</Link></li>
               <li><Link to="/login" style={{ textDecoration: 'underline', color: '#e8d5b8' }}>Log In</Link></li>
             </ul>
           </div>
