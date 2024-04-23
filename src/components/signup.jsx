@@ -24,6 +24,7 @@ const Signup = () => {
 
   const validateForm = () => {
     const errors = {};
+    const strongRegex = new RegExp("^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*[0-9])(?=.{8,})");
 
     if (!username.trim()) {
       errors.username = '*Name is required';
@@ -41,8 +42,11 @@ const Signup = () => {
     if (!password.trim()) {
       errors.password = '*Password is required';
       setIsError(true);
-    } else if (password.length < 6) {
-      errors.password = '*Password must be at least 6 characters long';
+    } else if (password.length < 8) {
+      errors.password = '*Password must be at least 8 characters long';
+      setIsError(true);
+    } else if (!strongRegex.test(password)) {
+      errors.password = '*Password must contain at least one special character, one digit, and be 8 characters long';
       setIsError(true);
     }
 
@@ -70,6 +74,20 @@ const Signup = () => {
 
   const togglePasswordVisibility = () => {
     setIsVisible(!isVisible);
+  };
+
+  const getPasswordStrength = () => {
+    const strengthRegex = new RegExp("^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*[0-9])(?=.{8,})");
+    if (password.length < 8) return 'Weak';
+    if (strengthRegex.test(password)) return 'Strong';
+    return 'Medium';
+  };
+
+  const getPasswordColor = () => {
+    const strength = getPasswordStrength();
+    if (strength === 'Strong') return 'green';
+    if (strength === 'Medium') return 'yellow';
+    return 'red';
   };
 
   return (
@@ -112,7 +130,7 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             onBlur={validateForm}
           />
-          <img src={isVisible? show : hide } className="password-toggle" onClick={togglePasswordVisibility} />
+          <div style={{ color: getPasswordColor() }}>{getPasswordStrength()}</div>
           {errors.password && <span className="error">{errors.password}</span>}
           
           <div className="input-label">Confirm Password</div>

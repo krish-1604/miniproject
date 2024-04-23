@@ -1,61 +1,73 @@
-.reportHeading{
+.reportHeading {
     padding: 100px 0 0 80px;
-    color: #083D32;
-}
-
-.reportInputs{
+    color: #083d32;
+  }
+  
+  .reportInputs {
     position: block;
     margin-top: 5%;
     margin-left: 6%;
     margin-bottom: 5%;
     width: 1080px;
-    height: 900px;
-    background-color: #FFECD1;
+    height: auto; /* Change height to auto to accommodate dynamic content */
+    background-color: #ffecd1;
     border-radius: 7.28px;
     padding-left: 50px;
     padding-top: 40px;
-    border: 3px solid #083D32;
-}
-
-span{
+    border: 3px solid #083d32;
+  }
+  
+  span {
     font-size: 25px;
     font-weight: bold;
-    color: #083D32;
-}
-
-.fieldLabel{
-    color: #0D9276;
+    color: #083d32;
+  }
+  
+  .fieldLabel {
+    color: #0d9276;
     font-size: 12px;
     margin-top: 10px;
-}
-
-.inputField{
+  }
+  
+  .inputContainer {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .inputField {
     border-radius: 7.28px;
     width: 960px;
-    background-color: #FFECD1;
+    background-color: #ffecd1;
     border: 1.8px solid black;
-}
-
-#des{
+  }
+  
+  #des {
     height: 125px;
-}
-
-#upload{
-    height: 250px;    
-}
-
-.reportSubmit{
+  }
+  
+  #upload {
+    height: 250px;
+  }
+  
+  .reportSubmit {
     display: block;
     margin-left: 40%;
     margin-top: 5%;
     border: none;
     border-radius: 11.26px;
-    background-color: #083D32;
+    background-color: #083d32;
     color: white;
     height: 60px;
     width: 140px;
-}
-
-.inputField option{
+  }
+  
+  .inputField option {
     border: 2px solid black;
-}
+  }
+  
+  .error {
+    color: red;
+    position: absolute;
+    bottom: -30px;
+  }
+  
