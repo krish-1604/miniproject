@@ -86,10 +86,13 @@ body {
 }
 
 .error{
-   color: red;
-  font-size: 12px;
+  display: block;
+  color: red;
+  font-size: 14px;
   margin-top: 5px;
-  display: flex;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis;
 }
 
 

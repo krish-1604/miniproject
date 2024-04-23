@@ -25,6 +25,7 @@ body {
   height: 450px;
   border-radius: 7.28px;
   color: #083D32;
+  margin-bottom: 20px;
 }
 
 .loginDiv p{
@@ -116,7 +117,7 @@ body {
 
 .error{
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-top: 4px;
   color: red;
 }
 

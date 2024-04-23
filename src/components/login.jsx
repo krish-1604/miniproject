@@ -27,11 +27,17 @@ const Login = () => {
     if (!username.trim()) {
       errors.username = "*Email is required";
       setErrorOccured(true);
+    } else {
+      setErrorOccured(false); // Reset error state if email is provided
     }
+
     if (!password.trim()) {
       errors.password = "*Password is required";
       setErrorOccured(true);
+    } else {
+      setErrorOccured(false); // Reset error state if password is provided
     }
+
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -40,9 +46,14 @@ const Login = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        await firebase.auth().signInWithEmailAndPassword(username, password);
-        console.log("Login successful");
-        navigate("/userhome");
+        if (username.trim() && password.trim()) {
+          await firebase.auth().signInWithEmailAndPassword(username, password);
+          console.log("Login successful");
+          navigate("/userhome");
+        } else {
+          setLoginError("Please provide valid email and password."); 
+          setErrorOccured(true);
+        }
       } catch (error) {
         console.error("Error logging in:", error.message);
         setLoginError("Incorrect Email or password."); 
@@ -55,6 +66,8 @@ const Login = () => {
     setShowPassword(!showPassword);
     setIsVisible(!isVisible);
   };
+
+  const errorsArray = Object.values(errors); // Get array of error messages
 
   return (
     <>
@@ -80,20 +93,22 @@ const Login = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             onBlur={validateForm}
+            required // Add required attribute
           />
-          {errors.username && <span className="error">{errors.username}</span>}
+          <div className="error">{errorsArray.join(" ")}</div> {/* Display all errors in one line */}
           <div className="input-label">Password</div>
           <div className="password-wrapper">
             <input
-              type={showPassword ? "text" : "password"} // Toggle between text and password type
+              type={showPassword ? "text" : "password"}
               className="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onBlur={validateForm}
+              required // Add required attribute
             />
             <img src={isVisible? show : hide } className="password-toggle" onClick={togglePasswordVisibility} />
           </div>
-          {errors.password && <span className="error" id="error">{errors.password}</span>}
+          {errorOcured && <div className="error">{loginError}</div>} {/* Display login error */}
           <button type="button" className={setErrorOccured ? "loginbuttonrevised" : "loginbutton"} onClick={handleSubmit}>
             <a href="/userhome" className="nakli2">
             Login

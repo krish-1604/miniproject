@@ -104,7 +104,7 @@ const Signup = () => {
               onChange={(e) => setUsername(e.target.value)}
               onBlur={validateForm}
             />
-            {errors.username && <span className="error">{errors.username}</span>}
+            {errors.username && <span className="error error-message">{errors.username}</span>}
           </div>
           
           <div className="input-container">
@@ -116,7 +116,7 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
               onBlur={validateForm}
             />
-            {errors.email && <span className="error">{errors.email}</span>}
+            {errors.email && <span className="error error-message">{errors.email}</span>}
           </div>
           
           <div className="input-container">
@@ -129,7 +129,7 @@ const Signup = () => {
               onBlur={validateForm}
             />
             <div style={{ color: getPasswordColor() }}>{getPasswordStrength()}</div>
-            {errors.password && <span className="error">{errors.password}</span>}
+            {errors.password && <span className="error error-message">{errors.password}</span>}
           </div>
           
           <div className="input-container">
@@ -142,7 +142,7 @@ const Signup = () => {
               onBlur={validateForm}
             />
             <img src={isVisible ? show : hide } className="password-toggle" onClick={togglePasswordVisibility} />
-            {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
+            {errors.confirmPassword && <span className="error error-message">{errors.confirmPassword}</span>}
           </div>
           
           <button type='submit' className={isError ? "SignUpbuttonrevised" : "SignUpbutton"} onClick={handleSubmit}>
