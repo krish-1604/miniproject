@@ -144,7 +144,6 @@ const ReportIncident = () => {
         <div className="inputContainer">
           <label className='fieldLabel'>Upload Photos</label>
           <br/>
-          {/* Use input type file for uploading photos */}
           <input
             type='file'
             className='inputField'
