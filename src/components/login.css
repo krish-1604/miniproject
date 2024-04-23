@@ -1,0 +1,222 @@
+body {
+  font: "Space Grotesk", sans-serif;
+  background-color: #fff6e9;
+}
+/* .login-container {
+  position: relative;
+}
+.login-div {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  background-color: #ffecd1;
+  padding: 25px 0 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  height: 480px;
+  border: 5px solid #083d32;
+  border-radius: 7.28px;
+}
+.login-div h1 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #083d32;
+}
+.login-div p {
+  font-size: 14px;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #0d9276;
+}
+
+.username {
+  background-color: #ffecd1;
+  border: 2px solid black;
+  border-radius: 7.28px;
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.password {
+  background-color: #ffecd1;
+  border: 2px solid black;
+  border-radius: 7.28px;
+  width: 250px;
+  height: 35px;
+}
+.remember {
+  justify-content: end;
+  margin-left: auto;
+  margin-top: 10px;
+  font-size: 13px;
+  margin-right: 25px;
+  margin-top: 5px;
+  color: #0d9276;
+}
+
+.remember input[type="checkbox"] {
+  margin-top: 5px;
+}
+.rememberLabel {
+  margin-left: 5px;
+  margin-top: -5px;
+}
+.loginB {
+  width: 250px;
+  background-color: #085444;
+  color: white;
+  margin-top: auto;
+  margin-bottom: 10px;
+  border: none;
+  font-size: smaller;
+  height: 35px;
+  border-radius: 10.1px;
+}
+
+.loginImg {
+  margin-top: 140px;
+  margin-left: 500px;
+  width: 700px;
+}
+
+.signupLogin{
+  color: #0d9276;
+  text-decoration: none;
+}
+
+.signupLogin:hover{
+  text-decoration: underline;
+} */
+
+.mainLoginContainer{
+  width: 800px;
+  height: 460px;
+  background-color: #083D32;
+  position: relative;
+  top: 100px;
+  left: 16%;
+  margin-bottom: 133px;
+  padding: 5px 0 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 7.28px;
+}
+
+.loginDiv{
+  background-color: #FFECD1;
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 500px;
+  height: 450px;
+  border-radius: 7.28px;
+  color: #083D32;
+}
+
+.loginDiv p{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.social-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons .google{
+  margin-right: 25px;
+}
+.or{
+  width: 100%;
+  margin-left: -5px;
+  margin-top: 15px
+}
+.input-label {
+  font-size: 14px;
+  color: #0d9276;
+}
+.username
+{
+  width: 460px !important;
+  margin-bottom: 2px !important;
+  background-color: transparent;
+  border-radius: 7.2px;
+  border: 1px solid black;
+}
+.password
+{
+  width: 460px !important;
+  margin-bottom: 2px !important;
+  background-color: transparent;
+  border-radius: 7.2px;
+  border: 1px solid black;
+}
+.nakli2{
+  text-decoration: none;
+  color:#fff;
+}
+.password-toggle{
+  width: 20px;
+}
+.loginbutton{
+  position: relative;
+  width: 460px;
+  text-align: center;
+  margin-top: 50px;
+  height: 50px;
+  border-radius: 10.1px;
+  border: none;
+  background-color: #083D32;
+  color: white;
+}
+.toggle-password{
+   margin-bottom: 0px;
+}
+.loginbuttonrevised{
+  position: relative;
+  width: 460px;
+  text-align: center;
+  margin-top: 10px;
+  height: 50px;
+  border-radius: 10.1px;
+  border: none;
+  background-color: #083D32;
+  color: white;
+}
+
+.signUpLogin{
+  text-wrap: wrap;
+  margin-left: 68%;
+  margin-top: -42%;
+  color: #FFECD1;
+}
+.signUpLogin p{
+  text-wrap: wrap;
+  margin-left: -5%;
+  margin-top: 0%;
+  color: #fff;
+}
+
+.error{
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: red;
+}
+
+
+.signUpLoginButton{
+  height: 60px;
+  width: 200px;
+  border-radius: 10.1px;
+  border: none;
+  background-color: #FFECD1;
+  margin-top: 40px;
+}

@@ -1,0 +1,61 @@
+.reportHeading{
+    padding: 100px 0 0 80px;
+    color: #083D32;
+}
+
+.reportInputs{
+    position: block;
+    margin-top: 5%;
+    margin-left: 6%;
+    margin-bottom: 5%;
+    width: 1080px;
+    height: 900px;
+    background-color: #FFECD1;
+    border-radius: 7.28px;
+    padding-left: 50px;
+    padding-top: 40px;
+    border: 3px solid #083D32;
+}
+
+span{
+    font-size: 25px;
+    font-weight: bold;
+    color: #083D32;
+}
+
+.fieldLabel{
+    color: #0D9276;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.inputField{
+    border-radius: 7.28px;
+    width: 960px;
+    background-color: #FFECD1;
+    border: 1.8px solid black;
+}
+
+#des{
+    height: 125px;
+}
+
+#upload{
+    height: 250px;    
+}
+
+.reportSubmit{
+    display: block;
+    margin-left: 40%;
+    margin-top: 5%;
+    border: none;
+    border-radius: 11.26px;
+    background-color: #083D32;
+    color: white;
+    height: 60px;
+    width: 140px;
+}
+
+.inputField option{
+    border: 2px solid black;
+}

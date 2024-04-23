@@ -1,0 +1,154 @@
+/* .headerImg {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.content {
+  background-color: #085444;
+  height: 70vh;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-head {
+  display: flex;
+  color: #ffdca8;
+  padding-left: 160px;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Space Grotesk',sans-serif;
+}
+
+.content-para {
+  display: flex;
+  color: #fff6e9;
+  margin-top: 50px;
+  padding-left: 160px;
+  margin-bottom: 20px;
+}
+
+.content-img {
+  margin-right: 100px;
+  margin-top: -300px;
+  width: 300px;
+  display: block;
+  z-index: -10;
+  margin-left: auto;
+}
+.nakli{
+  text-decoration: none;
+  color: #083d32;
+}
+.content-button{
+    border: none;
+    border-radius: 11.26px;
+    width: 180px;
+    height: 40px;
+    background-color: #FFF6E9;
+    color: #083d32;
+    font-size: 14px;
+    margin-left: 50px;
+    text-decoration: none;
+  }
+
+.buttons-content{
+    padding-left: 110px;
+    margin-top: -30px;
+} */
+body {
+  position: relative;
+}
+.headerImg {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.content {
+  background-color: #085444;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+.text-section {
+  flex: 1;
+  margin-top: 50px;
+}
+
+.content-head {
+  color: #ffdca8;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.content-para {
+  color: #fff6e9;
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.content-img {
+  width: 40%;
+  max-width: 300px;
+  justify-content: flex-end;
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  align-self: flex-start;
+  margin-left: auto;
+  text-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.buttons-content {
+  display: flex;
+  flex-direction: row; /* Change the direction to row */
+}
+
+.content-button {
+  border: none;
+  border-radius: 11.26px;
+  width: 180px;
+  height: 40px;
+  background-color: #FFF6E9;
+  color: #083d32;
+  font-size: 14px;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.footerBanner {
+  position: absolute;
+  width: 100%;
+  margin-top: -5%;
+  margin-left: -20px;
+  animation: content-animation 3s linear infinite;
+}
+.nakli{
+  text-decoration: none;
+  color: #083d32;
+}
+
+.earth-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: flex-end; 
+}
+
+@keyframes content-animation {
+  0% {
+      transform: translateY(-15px);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(-15px);
+  }
+}

@@ -1,0 +1,14 @@
+.logoutButton{
+  padding-top: 1px;
+  width: 80px;
+  height: 30px;
+  border-radius: 5.26px;
+  text-align: center;
+  margin-right: -50px;
+}
+
+.logoutButton:hover,.logoutButton::after {
+    background-color: #085444;
+    padding-top: 1px;
+    border-radius: 5.26px;
+  }

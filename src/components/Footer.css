@@ -1,0 +1,54 @@
+.footerLogin{
+  background-color: #083d32;
+  color: #e8d5b8;
+  overflow: hidden;
+}
+.footerImg {
+  width: 100%;
+  max-width: 400px; 
+  margin-top: 15%;
+  margin-left: 2%;
+}
+
+.toolsContainer{
+  padding-left: 65%;
+  padding-right: 18px;
+  padding-top: 5%;
+}
+
+.contactContainer{
+  padding-left: 17%;
+  padding-top: 4%;
+}
+
+.footerImgContainer{
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .footerImg {
+    margin-top: 0;
+  }
+
+  .toolsContainer {
+    padding-left: 0;
+    padding-right: 18px;
+  }
+
+  .contactContainer {
+    padding-left: 0;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .footerImgContainer {
+    display: none;
+  }
+  .toolsContainer,
+  .contactContainer {
+    padding: 0;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

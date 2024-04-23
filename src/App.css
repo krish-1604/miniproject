@@ -1,38 +1,249 @@
-.App {
+
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.homeButton{
+  padding-top: 1px;
+  width: 60px;
+  height: 30px;
+  border-radius: 5.26px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.reportButton{
+  padding-top: 1px;
+  width: 70px;
+  height: 30px;
+  border-radius: 5.26px;
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.blogButton{
+  padding-top: 1px;
+  width: 70px;
+  height: 30px;
+  border-radius: 5.26px;
+  text-align: center;
+}
+.ngoButton{
+  padding-top: 1px;
+  width: 70px;
+  height: 30px;
+  border-radius: 5.26px;
+  text-align: center;
+}
+.contactButton{
+  padding-top: 1px;
+  width: 105px;
+  height: 30px;
+  border-radius: 5.26px;
+  text-align: center;
+}
+.loginButton{
+  padding-top: 1px;
+  width: 60px;
+  height: 30px;
+  border-radius: 5.26px;
+  text-align: center;
+}
+.navImg{
+  margin-top: -5px;
+  margin-left: -50px;
+  width: 150px;
+}
+@media (max-width: 768px) {
+  .navbar-collapse {
+    justify-content: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navBarDes{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 50px;
+  background-color: #083D32 !important;
+}
+
+.navBarDes .nav-link{
+    color: #fff !important;
+}
+
+.loginButton{
+  margin-right: -50px;
+}
+
+.ngoButton:hover,.ngoButton::after{
+  background-color: #085444;
+  padding-top: 1px;
+  border-radius: 5.26px;
+}
+.blogButton:hover,.blogButton::after{
+  background-color: #085444;
+  padding-top: 1px;
+  border-radius: 5.26px;
+}
+.loginButton:hover,.loginButton::after{
+  background-color: #085444;
+  padding-top: 1px;
+  border-radius: 5.26px;
+}
+.contactButton:hover,.contactButton::after{
+  background-color: #085444;
+  padding-top: 1px;
+  border-radius: 5.26px;
+}
+
+.helpButton:hover,.helpButton::after{
+  background-color: #085444;
+  padding-top: 1px;
+  border-radius: 5.26px;
+}
+.reportButton:hover,.reportButton::after{
+  background-color: #085444;
+  width: 70px;
+  height: 30px;
+  padding-top: 1px;
+  border-radius: 5.26px;
+}
+.homeButton:hover,.homeButton::after{
+  background-color: #085444;
+  padding-top: 1px;
+}
+
+
+.navBarDes .nav-link.active div{
+  background-color: #0D9276;
+}
+
+
+
+.banner {
+  background-color: #fff6e9;
+  width: 100%;
+  height: 100vh;
+  padding: 60px 0 0 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+}
+
+.Banner-container {
+  flex-grow: 1;
+}
+
+.banner-text {
+  margin-top: 50px;
+  margin-left: 10px;
+  width: 250px;
+}
+
+.Banner-container h1 {
+  color: #083d32;
+  font-weight: bold;
+}
+
+.bannerImg {
+  width: 300px;
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+.banner-detail{
+  color: #0D9276;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.bannerHelp{
+  background-color: #083D32;
+  border: none;
+  border-radius: 11.26px;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 3%;
+  height: 40px;
+  width: 120px;
   color: white;
+  font-size: 13px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* .bannerLogin{
+  margin-left: 10px;
+  background-color: #083D32;
+  border: none;
+  border-radius: 11.26px;
+  height: 40px;
+  width: 120px;
+  color: white;
+  font-size: 13px;
+} */
+
+/* .animation-background{
+  margin-top: auto;
+  position: absolute;
+  top: 98%;
+  width: 100%;
+  height: 15px;
+  background-color: #085444;
+} */
+/* .footerBanner {
+  margin-top: auto;
+  animation: updown 3s linear infinite;
+} */
+.helpHeaderImg{
+  animation: downup 3s linear infinite;
+}
+.thirdImg{
+  animation: updown 3s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes downup {
+  0% {
+      transform: translateY(-15px);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(-15px);
+  }
+}
+@keyframes updown {
+  0% {
+      transform: translateY(15px);
+  }
+  50% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(15px);
+  }
+}
+@media (max-width: 768px) {
+  .banner-text {
+    width: auto;
+    
+    margin: 50px auto;
+  }
+
+  .bannerImg {
+    width: 80%;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 770px) {
+  .banner-text {
+    width: auto;
+    
+    margin: 50px auto;
+  }
+
+  .bannerImg {
+    display: none;
   }
 }

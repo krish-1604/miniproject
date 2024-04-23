@@ -1,0 +1,11 @@
+.bannerImg2{
+    display: absolute !important;
+    width: 500px !important;
+    margin-top: -20px;
+    margin-left: -50px;
+    margin-bottom: -250px;
+}
+
+.banner-text{
+    margin-top: 120px;
+}

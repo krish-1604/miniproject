@@ -1,0 +1,42 @@
+.getHelp{
+    background-color: #FFF6E9;
+    height: 100vh;
+}
+.helpHeaderImg{
+    width: 100%;
+}
+.helpHeader{
+    font-weight: bold;
+    font-size: 50px;
+    padding: 50px 0 0 60px;
+}
+.helpContent{
+    width: 450px;
+    margin-left: 60px;
+    margin-top: 20px;
+    color: #0D9276;
+}
+
+.helpImg{
+    margin-top: -310px;
+    margin-right: 80px;
+    margin-bottom: 30px;
+}
+.imgHelp{
+    display: block;
+    margin-left: auto;
+    width: 250px;
+}
+.thirdImg{
+    margin-top: auto;
+    width: 100%;
+}
+.getHelpButton{
+    background-color: #083D32;
+    color: #fff;
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 11.26px;
+    margin-top: 20px;
+}
