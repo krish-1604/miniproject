@@ -4,7 +4,7 @@ body {
 }
 .mainLoginContainer{
   width: 800px;
-  height: 460px;
+  height: 470px;
   background-color: #083D32;
   position: relative;
   top: 100px;
@@ -23,11 +23,12 @@ body {
   padding-top: 20px;
   padding-left: 20px;
   width: 500px;
-  height: 450px;
+  min-height: 460px; /* change from height to min-height */
   border-radius: 7.28px;
   color: #083D32;
   margin-bottom: 20px;
 }
+
 
 .loginDiv p{
   justify-content: center;
@@ -57,7 +58,7 @@ body {
 .username
 {
   width: 460px !important;
-  margin-bottom: 2px !important;
+  margin-bottom: 20px !important;
   background-color: transparent;
   border-radius: 7.2px;
   border: 1px solid black;
@@ -65,7 +66,7 @@ body {
 .password
 {
   width: 460px !important;
-  margin-bottom: 2px !important;
+  margin-bottom: 20px !important;
   background-color: transparent;
   border-radius: 7.2px;
   border: 1px solid black;
@@ -77,8 +78,8 @@ body {
 .password-toggle{
   width: 20px;
   position: absolute;
-  top: 50%; 
-  right: 10px;
+  top: 41%; 
+  right: 1px;
   transform: translateY(-50%); 
 }
 .loginbutton{
@@ -86,7 +87,7 @@ body {
   width: 460px;
   text-align: center;
   margin-top: 50px;
-  height: 50px;
+  height: 50px; 
   border-radius: 10.1px;
   border: none;
   background-color: #083D32;
@@ -126,6 +127,7 @@ body {
 .error{
   position: absolute;
   font-size: 12px;
+  margin-bottom: 10px;
   color: red;
   left: 0;
 }

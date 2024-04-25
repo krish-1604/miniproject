@@ -67,8 +67,6 @@ const Login = () => {
     setIsVisible(!isVisible);
   };
 
-  const errorsArray = Object.values(errors);
-
   return (
     <>
     <div className="login-container">
@@ -86,29 +84,39 @@ const Login = () => {
             </a>
           </div>
           <img src={or} className="or" />
-          <div className="input-label">Email</div>
-          <input
-            type="text"
-            className="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            onBlur={validateForm}
-            required 
-          />
-          <div className="input-label">Password</div>
-          <div className="password-wrapper">
-            <input
-              type={showPassword ? "text" : "password"}
-              className="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onBlur={validateForm}
-              required
-            />
-            <img src={isVisible? show : hide } className="password-toggle" onClick={togglePasswordVisibility} />
-          </div>
-          {errorOcured && <div className="error">{loginError}</div>}
-          <div className="error">{errorsArray.join(" ")}</div>
+          
+
+<div className="input-container">
+  <div className="input-label">Email</div>
+  <input
+    type="text"
+    className="username"
+    value={username}
+    onChange={(e) => setUsername(e.target.value)}
+    onBlur={validateForm}
+    required 
+  />
+  {errors.username && <div className="error">{errors.username}</div>}
+</div>
+<br/>
+<div className="input-container">
+  <div className="input-label">Password</div>
+  <div className="password-wrapper">
+    <input
+      type={showPassword ? "text" : "password"}
+      className="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      onBlur={validateForm}
+      required
+    />
+    <img src={isVisible? show : hide } className="password-toggle" onClick={togglePasswordVisibility} />
+  </div>
+  {errors.password && <div className="error">{errors.password}</div>}
+</div>
+<br/>
+
+
           <button type="button" className={setErrorOccured ? "loginbuttonrevised" : "loginbutton"} onClick={handleSubmit}>
             <a href="/userhome" className="nakli2">
             Login
@@ -133,15 +141,14 @@ const Login = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              textDecoration: "none",
             }}
           >
             Sign Up
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
-    <Footer />
     </>
   );
 };
