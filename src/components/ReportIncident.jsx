@@ -56,17 +56,18 @@ const ReportIncident = () => {
       };
 
       incidentRef.push(newIncident)
-        .then((snapshot) => {
-          console.log('Incident reported successfully');
-          navigate("/userhome");
-          if (selectedFile) {
-            handleImageUpload(snapshot.key); 
-          } else {
-          }
-        })
-        .catch((error) => {
-          console.error('Error reporting incident:', error);
-        });
+  .then((snapshot) => {
+    alert('Incident reported successfully');
+    navigate("/userhome");
+    if (selectedFile) {
+      handleImageUpload(snapshot.key); 
+    }
+  })
+  .catch((error) => {
+    console.error('Error reporting incident:', error);
+    prompt('Failed to report incident. Please try again.');
+  });
+
     }
   };
 
