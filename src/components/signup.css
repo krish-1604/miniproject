@@ -86,15 +86,14 @@ body {
 }
 
 .error{
-  display: block;
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis;
+  position: absolute;
+  margin-bottom: 10px; 
+  left: 0;
 }
 
+.input-container{
+  position: relative;
+}
 
 .signUpLoginButton{
   height: 60px;

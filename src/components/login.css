@@ -18,6 +18,7 @@ body {
 }
 
 .loginDiv{
+  position: relative;
   background-color: #FFECD1;
   padding-top: 20px;
   padding-left: 20px;
@@ -75,6 +76,10 @@ body {
 }
 .password-toggle{
   width: 20px;
+  position: absolute;
+  top: 50%; 
+  right: 10px;
+  transform: translateY(-50%); 
 }
 .loginbutton{
   position: relative;
@@ -86,6 +91,9 @@ body {
   border: none;
   background-color: #083D32;
   color: white;
+}
+.password-wrapper {
+  position: relative; 
 }
 .toggle-password{
    margin-bottom: 0px;
@@ -116,9 +124,10 @@ body {
 }
 
 .error{
+  position: absolute;
   font-size: 12px;
-  margin-top: 4px;
   color: red;
+  left: 0;
 }
 
 

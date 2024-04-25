@@ -28,14 +28,14 @@ const Login = () => {
       errors.username = "*Email is required";
       setErrorOccured(true);
     } else {
-      setErrorOccured(false); // Reset error state if email is provided
+      setErrorOccured(false); 
     }
 
     if (!password.trim()) {
       errors.password = "*Password is required";
       setErrorOccured(true);
     } else {
-      setErrorOccured(false); // Reset error state if password is provided
+      setErrorOccured(false); 
     }
 
     setErrors(errors);
@@ -67,7 +67,7 @@ const Login = () => {
     setIsVisible(!isVisible);
   };
 
-  const errorsArray = Object.values(errors); // Get array of error messages
+  const errorsArray = Object.values(errors);
 
   return (
     <>
@@ -93,9 +93,8 @@ const Login = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             onBlur={validateForm}
-            required // Add required attribute
+            required 
           />
-          <div className="error">{errorsArray.join(" ")}</div> {/* Display all errors in one line */}
           <div className="input-label">Password</div>
           <div className="password-wrapper">
             <input
@@ -104,11 +103,12 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onBlur={validateForm}
-              required // Add required attribute
+              required
             />
             <img src={isVisible? show : hide } className="password-toggle" onClick={togglePasswordVisibility} />
           </div>
-          {errorOcured && <div className="error">{loginError}</div>} {/* Display login error */}
+          {errorOcured && <div className="error">{loginError}</div>}
+          <div className="error">{errorsArray.join(" ")}</div>
           <button type="button" className={setErrorOccured ? "loginbuttonrevised" : "loginbutton"} onClick={handleSubmit}>
             <a href="/userhome" className="nakli2">
             Login

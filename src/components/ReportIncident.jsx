@@ -108,9 +108,9 @@ const ReportIncident = () => {
           <br/>
           <select className='inputField' value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value=''>Select Category</option>
-            <option value='Category1'>Category 1</option>
-            <option value='Category2'>Category 2</option>
-            <option value='Category3'>Category 3</option>
+            <option value='Category1'>Report Animal Rescue</option>
+            <option value='Category2'>Report Food Requirement</option>
+            <option value='Category3'>Report Shelter Requirement</option>
           </select>
           {errors.category && <div className="error">{errors.category}</div>}
         </div>

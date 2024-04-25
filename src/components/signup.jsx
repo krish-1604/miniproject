@@ -53,6 +53,10 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    validateForm();
+    if (isError) {
+      return;
+    }
     try {
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       console.log("Account created successfully");
@@ -63,6 +67,7 @@ const Signup = () => {
       setIsError(true);
     }
   };
+  
 
   const togglePasswordVisibility = () => {
     setIsVisible(!isVisible);
@@ -106,7 +111,7 @@ const Signup = () => {
             />
             {errors.username && <span className="error error-message">{errors.username}</span>}
           </div>
-          
+          <br></br>
           <div className="input-container">
             <div className="input-label">Email</div>
             <input 
@@ -118,7 +123,7 @@ const Signup = () => {
             />
             {errors.email && <span className="error error-message">{errors.email}</span>}
           </div>
-          
+          <br></br>
           <div className="input-container">
             <div className="input-label">Password</div>
             <input 
@@ -131,7 +136,7 @@ const Signup = () => {
             <div style={{ color: getPasswordColor() }}>{getPasswordStrength()}</div>
             {errors.password && <span className="error error-message">{errors.password}</span>}
           </div>
-          
+          <br></br>
           <div className="input-container">
             <div className="input-label">Confirm Password</div>
             <input 
