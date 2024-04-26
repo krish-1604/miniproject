@@ -5,7 +5,7 @@ body {
   
   .mainSignUpContainer{
     width: 800px;
-    height: 620px;
+    height: 720px;
     background-color: #083D32;
     position: relative;
     top: 100px;
@@ -22,7 +22,7 @@ body {
     padding-top: 20px;
     padding-left: 20px;
     width: 500px;
-    height: 610px;
+    height: 710px;
     border-radius: 7.28px;
     color: #083D32;
   }
